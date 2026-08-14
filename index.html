@@ -11,7 +11,6 @@
 
   <title>Service Dept. | Service Call 001 Feedback</title>
 
-  <!-- DotGothic16 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -22,10 +21,6 @@
 
   <style>
 
-    /* ================================
-       SERVICE DEPT. BRAND
-       ================================ */
-
     :root {
       --charcoal: #171717;
       --cream: #F0EEE9;
@@ -33,154 +28,72 @@
       --blue: #244B8F;
     }
 
-
-    /* ================================
-       BASE
-       ================================ */
-
     * {
       box-sizing: border-box;
     }
 
-    html {
+    html,
+    body {
       margin: 0;
       padding: 0;
       width: 100%;
       min-height: 100%;
       background: var(--charcoal);
+      color: var(--cream);
+      font-family: "DotGothic16", sans-serif;
       overflow-x: hidden;
     }
 
     body {
-      margin: 0;
-      padding: 0;
-
-      width: 100%;
       min-height: 100vh;
       min-height: 100dvh;
-
-      background: var(--charcoal);
-      color: var(--cream);
-
-      font-family: "DotGothic16", sans-serif;
-
-      overflow-x: hidden;
     }
 
-
-    /* ================================
-       HEADER
-       ================================ */
+    /* HEADER */
 
     .site-header {
       width: 100%;
-
       padding:
-        max(28px, env(safe-area-inset-top))
-        32px
-        0;
+        max(24px, env(safe-area-inset-top))
+        20px
+        8px;
 
-      position: relative;
-      z-index: 10;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
     }
 
-    .logo {
-      display: block;
-
-      width: 125px;
-      height: auto;
-
-      object-fit: contain;
-    }
-
-
-    /* ================================
-       HERO
-       ================================ */
-
-    .hero {
-      width: 100%;
-
-      text-align: center;
-
-      padding:
-        70px
-        24px
-        46px;
-    }
-
-    .eyebrow {
-      margin: 0 0 16px;
-
-      color: var(--red);
-
-      font-size: 14px;
-      font-weight: 400;
-
-      letter-spacing: 0.08em;
-
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-
+    .text-logo {
       color: var(--cream);
-
-      font-size: clamp(34px, 5vw, 58px);
-      font-weight: 400;
-
-      line-height: 1.05;
-
+      font-size: 22px;
+      line-height: 0.78;
+      letter-spacing: -0.05em;
       text-transform: uppercase;
+      font-weight: 400;
     }
 
-    .intro {
+    /* FORM */
+
+    main {
       width: 100%;
-      max-width: 680px;
-
-      margin:
-        28px
-        auto
-        0;
-
-      color: var(--cream);
-
-      font-size: 16px;
-      line-height: 1.7;
-
-      opacity: 0.82;
     }
-
-
-    /* ================================
-       FORM
-       ================================ */
 
     .form-section {
       width: 100%;
-
       margin: 0;
       padding: 0;
-
       background: var(--charcoal);
     }
 
     .fillout-wrapper {
       width: 100%;
-
       min-height: 300px;
-
       margin: 0;
       padding: 0;
-
       overflow: visible;
     }
 
-
-    /* ================================
-       FOOTER
-       ================================ */
+    /* FOOTER */
 
     footer {
       width: 100%;
@@ -190,28 +103,23 @@
         rgba(240, 238, 233, 0.14);
 
       padding:
-        24px
-        32px
-        max(30px, env(safe-area-inset-bottom));
+        20px
+        20px
+        max(28px, env(safe-area-inset-bottom));
 
       display: flex;
-
       justify-content: space-between;
       align-items: center;
 
-      gap: 20px;
+      gap: 18px;
 
       color: var(--cream);
 
-      font-size: 12px;
+      font-size: 11px;
+      letter-spacing: 0.04em;
 
-      opacity: 0.6;
+      opacity: 0.55;
     }
-
-
-    /* ================================
-       MOBILE
-       ================================ */
 
     @media (max-width: 640px) {
 
@@ -219,103 +127,41 @@
         padding:
           max(22px, env(safe-area-inset-top))
           18px
-          0;
+          4px;
       }
 
-      .logo {
-        width: 105px;
-      }
-
-      .hero {
-        padding:
-          48px
-          18px
-          34px;
-      }
-
-      .eyebrow {
-        margin-bottom: 14px;
-
-        font-size: 12px;
-      }
-
-      h1 {
-        font-size: clamp(34px, 10vw, 48px);
-
-        line-height: 1.08;
-      }
-
-      .intro {
-        max-width: 520px;
-
-        margin-top: 24px;
-
-        font-size: 14px;
-        line-height: 1.65;
+      .text-logo {
+        font-size: 20px;
       }
 
       footer {
         padding:
-          20px
           18px
-          max(28px, env(safe-area-inset-bottom));
+          18px
+          max(26px, env(safe-area-inset-bottom));
 
         flex-direction: column;
-
         align-items: flex-start;
-
-        gap: 6px;
+        gap: 5px;
       }
+
     }
 
   </style>
 </head>
 
-
 <body>
-
-  <!-- ================================
-       SERVICE DEPT. HEADER
-       ================================ -->
 
   <header class="site-header">
 
-    <img
-      class="logo"
-      src="SVD-04.png"
-      alt="Service Dept."
-    >
+    <div class="text-logo">
+      SERVICE<br>
+      DEPT.
+    </div>
 
   </header>
 
-
-  <!-- ================================
-       CONTENT
-       ================================ -->
-
   <main>
-
-    <section class="hero">
-
-      <div class="eyebrow">
-        SERVICE CALL 001
-      </div>
-
-      <h1>
-        POST-SERVICE REPORT
-      </h1>
-
-      <p class="intro">
-        Your feedback helps us improve future Service Calls
-        and decide what we build next.
-      </p>
-
-    </section>
-
-
-    <!-- ==============================
-         FILLOUT FORM
-         ============================== -->
 
     <section class="form-section">
 
@@ -326,7 +172,7 @@
           data-fillout-embed-type="standard"
           data-fillout-inherit-parameters
           data-fillout-dynamic-resize
-          style="width: 100%;"
+          style="width:100%;"
         ></div>
 
       </div>
@@ -334,11 +180,6 @@
     </section>
 
   </main>
-
-
-  <!-- ================================
-       FOOTER
-       ================================ -->
 
   <footer>
 
@@ -351,9 +192,6 @@
     </span>
 
   </footer>
-
-
-  <!-- Fillout Embed -->
 
   <script src="https://server.fillout.com/embed/v1/"></script>
 

@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
   <title>Service Dept. | Service Call 001 Feedback</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     :root {
@@ -26,55 +29,56 @@
     body {
       margin: 0;
       padding: 0;
+      width: 100%;
+      min-height: 100%;
       background: var(--charcoal);
       color: var(--cream);
       font-family: "DotGothic16", sans-serif;
+      overflow-x: hidden;
     }
 
     body {
       min-height: 100vh;
+      min-height: 100dvh;
     }
 
     .site-header {
       width: 100%;
-      padding: 30px 32px 0;
+      padding:
+        max(22px, env(safe-area-inset-top))
+        22px
+        0;
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 20px;
       line-height: 0.9;
-      font-weight: 700;
-      letter-spacing: -1px;
       text-transform: uppercase;
     }
 
     .hero {
+      width: 100%;
       text-align: center;
-      padding: 100px 24px 50px;
+      padding: 56px 20px 38px;
     }
 
     .eyebrow {
+      margin-bottom: 14px;
       color: var(--red);
       font-size: 13px;
       letter-spacing: 0.08em;
-      margin-bottom: 14px;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(32px, 5vw, 58px);
+      font-size: clamp(34px, 10vw, 58px);
       font-weight: 400;
       line-height: 1.05;
     }
 
-    .subtitle {
-      margin-top: 12px;
-      font-size: clamp(20px, 3vw, 32px);
-    }
-
     .intro {
       max-width: 650px;
-      margin: 24px auto 0;
+      margin: 26px auto 0;
       font-size: 16px;
       line-height: 1.7;
       opacity: 0.82;
@@ -82,21 +86,23 @@
 
     .form-section {
       width: 100%;
-      max-width: 900px;
       margin: 0 auto;
-      padding: 0 16px 80px;
+      padding: 0;
     }
 
-    .form-frame {
+    .fillout-wrapper {
       width: 100%;
-      min-height: 1100px;
-      border: 0;
-      background: var(--charcoal);
+      min-height: 300px;
+      overflow: visible;
     }
 
     footer {
+      width: 100%;
       border-top: 1px solid rgba(240, 238, 233, 0.14);
-      padding: 24px 32px 30px;
+      padding:
+        24px
+        22px
+        max(30px, env(safe-area-inset-bottom));
       display: flex;
       justify-content: space-between;
       gap: 20px;
@@ -104,34 +110,24 @@
       opacity: 0.65;
     }
 
-    .blue {
-      color: var(--blue);
-    }
-
     @media (max-width: 640px) {
       .site-header {
-        padding: 22px 20px 0;
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
       .hero {
-        padding: 70px 20px 35px;
+        padding: 44px 18px 30px;
       }
 
       .intro {
         font-size: 14px;
-      }
-
-      .form-section {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      .form-frame {
-        min-height: 1200px;
+        line-height: 1.65;
       }
 
       footer {
-        padding: 20px;
+        padding-left: 18px;
+        padding-right: 18px;
         flex-direction: column;
         align-items: flex-start;
       }
@@ -148,7 +144,6 @@
   </header>
 
   <main>
-
     <section class="hero">
       <div class="eyebrow">SERVICE CALL 001</div>
 
@@ -161,21 +156,24 @@
     </section>
 
     <section class="form-section">
-      <iframe
-        class="form-frame"
-        src="https://forms.fillout.com/t/fC1y2kDPzGus"
-        title="Service Call 001 Feedback"
-        loading="lazy"
-        allow="camera; microphone; autoplay; encrypted-media;"
-      ></iframe>
+      <div class="fillout-wrapper">
+        <div
+          data-fillout-id="fC1y2kDPzGus"
+          data-fillout-embed-type="standard"
+          data-fillout-inherit-parameters
+          data-fillout-dynamic-resize
+          style="width:100%;"
+        ></div>
+      </div>
     </section>
-
   </main>
 
   <footer>
     <span>SERVICE DEPT. / BANGKOK</span>
     <span>EST. 2026</span>
   </footer>
+
+  <script src="https://server.fillout.com/embed/v1/"></script>
 
 </body>
 </html>

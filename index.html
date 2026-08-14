@@ -9,7 +9,7 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
-  <title>Service Dept. | Service Call 001 Feedback</title>
+  <title>Service Dept.</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,15 +26,630 @@
       --cream: #F0EEE9;
       --red: #D44A4A;
       --blue: #244B8F;
+
+      --window-gray: #c7c7c7;
+      --window-light: #f3f1ec;
+      --window-mid: #aaaaaa;
+      --window-dark: #555555;
     }
 
     * {
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
 
     html,
     body {
       margin: 0;
+      padding: 0;
+
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+
+      background: var(--charcoal);
+
+      font-family:
+        "DotGothic16",
+        "Courier New",
+        monospace;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+
+
+    /* ========================================
+       DESKTOP
+       ======================================== */
+
+    .desktop {
+      position: relative;
+
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          rgba(36, 75, 143, 0.04),
+          rgba(36, 75, 143, 0.04)
+        ),
+        var(--charcoal);
+    }
+
+
+    /* subtle old-monitor texture */
+
+    .desktop::after {
+      content: "";
+
+      pointer-events: none;
+
+      position: absolute;
+      inset: 0;
+
+      z-index: 50;
+
+      opacity: 0.05;
+
+      background:
+        repeating-linear-gradient(
+          0deg,
+          rgba(240, 238, 233, 0.12) 0px,
+          rgba(240, 238, 233, 0.12) 1px,
+          transparent 1px,
+          transparent 3px
+        );
+    }
+
+
+    /* ========================================
+       CENTER BRAND
+       ======================================== */
+
+    .brand-area {
+      position: absolute;
+
+      top: 42%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      z-index: 2;
+    }
+
+    .main-logo {
+      display: block;
+
+      width: 165px;
+      max-width: 38vw;
+
+      height: auto;
+
+      margin-bottom: 20px;
+
+      filter: none;
+    }
+
+    .system-label {
+      color: rgba(240, 238, 233, 0.42);
+
+      font-size: 11px;
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+
+      text-align: center;
+    }
+
+
+    /* ========================================
+       DESKTOP ICON
+       ======================================== */
+
+    .desktop-shortcut {
+      position: absolute;
+
+      left: 42px;
+      top: 42px;
+
+      width: 120px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      gap: 8px;
+
+      color: var(--cream);
+
+      text-decoration: none;
+
+      cursor: pointer;
+
+      z-index: 10;
+    }
+
+    .shortcut-icon {
+      width: 54px;
+      height: 48px;
+
+      position: relative;
+
+      background: var(--window-gray);
+
+      border-top: 3px solid var(--window-light);
+      border-left: 3px solid var(--window-light);
+
+      border-right: 3px solid var(--window-dark);
+      border-bottom: 3px solid var(--window-dark);
+
+      box-shadow: 2px 2px 0 #000;
+    }
+
+    .shortcut-icon::before {
+      content: "";
+
+      position: absolute;
+
+      top: 7px;
+      left: 7px;
+      right: 7px;
+
+      height: 8px;
+
+      background: var(--blue);
+    }
+
+    .shortcut-icon::after {
+      content: "001";
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 6px;
+
+      color: #111;
+
+      font-size: 15px;
+
+      text-align: center;
+    }
+
+    .shortcut-label {
+      padding: 3px 5px;
+
+      color: var(--cream);
+
+      font-size: 13px;
+      line-height: 1.2;
+
+      text-align: center;
+
+      text-shadow:
+        1px 1px 0 #000,
+        -1px -1px 0 #000;
+    }
+
+    .desktop-shortcut:hover .shortcut-label,
+    .desktop-shortcut:focus .shortcut-label {
+      background: var(--blue);
+    }
+
+    .desktop-shortcut:active .shortcut-icon {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 #000;
+    }
+
+
+    /* ========================================
+       CLOCK WINDOW
+       ======================================== */
+
+    .clock-window {
+      position: absolute;
+
+      top: 42px;
+      right: 42px;
+
+      min-width: 128px;
+
+      padding: 10px 14px;
+
+      color: #111;
+      background: var(--window-gray);
+
+      border-top: 3px solid var(--window-light);
+      border-left: 3px solid var(--window-light);
+
+      border-right: 3px solid var(--window-dark);
+      border-bottom: 3px solid var(--window-dark);
+
+      box-shadow: 2px 2px 0 #000;
+
+      font-size: 17px;
+      text-align: center;
+
+      z-index: 10;
+    }
+
+
+    /* ========================================
+       STATUS COPY
+       ======================================== */
+
+    .status-message {
+      position: absolute;
+
+      bottom: 72px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 100%;
+
+      padding: 0 20px;
+
+      color: rgba(240, 238, 233, 0.38);
+
+      font-size: 11px;
+
+      letter-spacing: 0.12em;
+
+      text-align: center;
+      text-transform: uppercase;
+
+      z-index: 4;
+    }
+
+
+    /* ========================================
+       WINDOWS TASKBAR
+       ======================================== */
+
+    .taskbar {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 46px;
+
+      padding: 5px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 6px;
+
+      background: var(--window-gray);
+
+      border-top: 3px solid var(--window-light);
+
+      z-index: 30;
+    }
+
+    .start-button {
+      height: 34px;
+
+      padding: 0 12px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 7px;
+
+      color: #111;
+      background: var(--window-gray);
+
+      border-top: 2px solid var(--window-light);
+      border-left: 2px solid var(--window-light);
+
+      border-right: 2px solid var(--window-dark);
+      border-bottom: 2px solid var(--window-dark);
+
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .start-mark {
+      width: 15px;
+      height: 15px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--red) 0 48%,
+          transparent 48% 52%,
+          var(--blue) 52% 100%
+        );
+    }
+
+    .task-item {
+      height: 34px;
+
+      flex: 0 1 280px;
+
+      padding: 0 12px;
+
+      display: flex;
+      align-items: center;
+
+      color: #111;
+
+      background: #b9b9b9;
+
+      border-top: 2px solid var(--window-dark);
+      border-left: 2px solid var(--window-dark);
+
+      border-right: 2px solid var(--window-light);
+      border-bottom: 2px solid var(--window-light);
+
+      font-size: 13px;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .task-clock {
+      margin-left: auto;
+
+      min-width: 88px;
+      height: 34px;
+
+      padding: 0 10px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #111;
+
+      border-top: 2px solid var(--window-dark);
+      border-left: 2px solid var(--window-dark);
+
+      border-right: 2px solid var(--window-light);
+      border-bottom: 2px solid var(--window-light);
+
+      font-size: 13px;
+    }
+
+
+    /* ========================================
+       BOOT MESSAGE
+       ======================================== */
+
+    .boot-text {
+      position: absolute;
+
+      left: 42px;
+      bottom: 78px;
+
+      color: var(--red);
+
+      font-size: 10px;
+      line-height: 1.5;
+
+      letter-spacing: 0.08em;
+
+      opacity: 0.55;
+
+      z-index: 3;
+    }
+
+
+    /* ========================================
+       MOBILE
+       ======================================== */
+
+    @media (max-width: 640px) {
+
+      .desktop-shortcut {
+        left: 22px;
+        top: 32px;
+
+        width: 105px;
+      }
+
+      .shortcut-icon {
+        width: 50px;
+        height: 45px;
+      }
+
+      .shortcut-label {
+        font-size: 12px;
+      }
+
+      .clock-window {
+        top: 32px;
+        right: 20px;
+
+        min-width: 106px;
+
+        padding: 8px 10px;
+
+        font-size: 14px;
+      }
+
+      .brand-area {
+        top: 45%;
+      }
+
+      .main-logo {
+        width: 135px;
+        max-width: 44vw;
+      }
+
+      .system-label {
+        font-size: 9px;
+      }
+
+      .boot-text {
+        display: none;
+      }
+
+      .task-item {
+        display: none;
+      }
+
+      .taskbar {
+        height: 48px;
+      }
+
+      .start-button {
+        height: 34px;
+      }
+
+      .task-clock {
+        height: 34px;
+      }
+
+      .status-message {
+        bottom: 68px;
+
+        font-size: 9px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <main class="desktop">
+
+
+    <!-- FEEDBACK SHORTCUT -->
+
+    <a
+      class="desktop-shortcut"
+      href="https://forms.fillout.com/t/fC1y2kDPzGus"
+      aria-label="Open Service Call 001 Post-Service Report"
+    >
+
+      <div class="shortcut-icon"></div>
+
+      <div class="shortcut-label">
+        POST-SERVICE<br>REPORT
+      </div>
+
+    </a>
+
+
+    <!-- CLOCK -->
+
+    <div
+      class="clock-window"
+      id="desktop-clock"
+    >
+      --:-- --
+    </div>
+
+
+    <!-- SERVICE DEPT. -->
+
+    <section class="brand-area">
+
+      <img
+        src="SVD-04.png"
+        alt="Service Dept."
+        class="main-logo"
+      >
+
+      <div class="system-label">
+        OPERATIONS TERMINAL / 030
+      </div>
+
+    </section>
+
+
+    <!-- TERMINAL COPY -->
+
+    <div class="boot-text">
+      SERVICE DEPT. OPERATING SYSTEM<br>
+      DEPARTMENT NODE: BKK-001<br>
+      STATUS: ONLINE
+    </div>
+
+    <div class="status-message">
+      AUTHORIZED DEPARTMENT USE ONLY
+    </div>
+
+
+    <!-- TASKBAR -->
+
+    <footer class="taskbar">
+
+      <div class="start-button">
+
+        <span class="start-mark"></span>
+
+        <span>
+          Start
+        </span>
+
+      </div>
+
+      <div class="task-item">
+        Service Dept. Operations Terminal
+      </div>
+
+      <div
+        class="task-clock"
+        id="taskbar-clock"
+      >
+        --:-- --
+      </div>
+
+    </footer>
+
+
+  </main>
+
+
+  <script>
+
+    function updateClock() {
+
+      const now = new Date();
+
+      const time = now.toLocaleTimeString(
+        [],
+        {
+          hour: "numeric",
+          minute: "2-digit"
+        }
+      );
+
+      document.getElementById("desktop-clock").textContent = time;
+
+      document.getElementById("taskbar-clock").textContent = time;
+
+    }
+
+    updateClock();
+
+    setInterval(updateClock, 1000);
+
+  </script>
+
+</body>
+
+</html>      margin: 0;
       padding: 0;
       width: 100%;
       min-height: 100%;

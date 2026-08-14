@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Service Dept. | Service Call 001 Feedback</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --charcoal: #171717;
+      --cream: #F0EEE9;
+      --red: #D44A4A;
+      --blue: #244B8F;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--charcoal);
+      color: var(--cream);
+      font-family: "DotGothic16", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .site-header {
+      width: 100%;
+      padding: 30px 32px 0;
+    }
+
+    .logo {
+      font-size: 22px;
+      line-height: 0.9;
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 24px 50px;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      margin-top: 12px;
+      font-size: clamp(20px, 3vw, 32px);
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 24px auto 0;
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: 0.82;
+    }
+
+    .form-section {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 16px 80px;
+    }
+
+    .form-frame {
+      width: 100%;
+      min-height: 1100px;
+      border: 0;
+      background: var(--charcoal);
+    }
+
+    footer {
+      border-top: 1px solid rgba(240, 238, 233, 0.14);
+      padding: 24px 32px 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 12px;
+      opacity: 0.65;
+    }
+
+    .blue {
+      color: var(--blue);
+    }
+
+    @media (max-width: 640px) {
+      .site-header {
+        padding: 22px 20px 0;
+      }
+
+      .hero {
+        padding: 70px 20px 35px;
+      }
+
+      .intro {
+        font-size: 14px;
+      }
+
+      .form-section {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .form-frame {
+        min-height: 1200px;
+      }
+
+      footer {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="logo">
+      SERVICE<br>DEPT.
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="eyebrow">SERVICE CALL 001</div>
+
+      <h1>POST-SERVICE REPORT</h1>
+
+      <p class="intro">
+        Your feedback helps us improve future Service Calls
+        and decide what we build next.
+      </p>
+    </section>
+
+    <section class="form-section">
+      <iframe
+        class="form-frame"
+        src="https://forms.fillout.com/t/fC1y2kDPzGus"
+        title="Service Call 001 Feedback"
+        loading="lazy"
+        allow="camera; microphone; autoplay; encrypted-media;"
+      ></iframe>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>SERVICE DEPT. / BANGKOK</span>
+    <span>EST. 2026</span>
+  </footer>
+
+</body>
+</html>
